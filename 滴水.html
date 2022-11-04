@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .drop {
+            height: 100vh;
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            filter: contrast(30);
+        }
+        .mother{
+            width: 100px;
+            height: 100px;
+            background-color: #fff;
+            border-radius: 50%;
+            filter: blur(20px);
+        }
+        .water{
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: white;
+            z-index: 999;
+            filter: blur(20px);
+        }
+        .water:nth-child(2){
+            position: absolute;
+            top: 400px;
+            animation: drop 3s infinite ease-in-out;
+        }
+        .water:nth-child(3){
+            position: absolute;
+            top: 400px;
+            animation: drop 3s 1s infinite ease-in-out;
+        }
+        .water:nth-child(4){
+            position: absolute;
+            top: 400px;
+            animation: drop 3s 2s infinite ease-in-out;
+        }
+        
+         @keyframes drop{
+            0%{
+                top: 380px;
+            }
+            36%{
+                height: 90px;
+            }
+            40%{
+                height: 80px;
+
+            }
+            45%{
+                height: 70px;
+
+            }
+            50%{
+                height: 60px;
+            }
+            100%{
+                transform: translate(0,250px) scale(0.5);
+                height: 20px;
+                width: 50px;
+            }
+        }
+       
+        
+
+        
+    </style>
+</head>
+
+<body>
+    <div class="drop">
+        <div class="mother"></div>
+        <div class="water"></div>
+        <div class="water"></div>
+        <div class="water"></div>
+    </div>
+</body>
+
+</html>
