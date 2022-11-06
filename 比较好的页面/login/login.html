@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow: hidden;
+        }
+
+        section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(to bottom, #f1f4f9, #dff1ff);
+
+        }
+
+        section .color {
+            filter: blur(200px);
+            position: absolute;
+        }
+
+        .color:nth-child(1) {
+            top: -300px;
+            height: 600px;
+            width: 1500px;
+            background-color: #f3359b;
+        }
+
+        .color:nth-child(2) {
+            background-color: #00d2ff;
+            width: 600px;
+            height: 600px;
+            bottom: -150px;
+            left: 100px;
+        }
+
+        .color:nth-child(3) {
+            background-color: rgb(240, 223, 34);
+            width: 450px;
+            height: 450px;
+            bottom: 50px;
+            right: 100px;
+        }
+
+        .box {
+            position: relative;
+            animation: box-updown 5s infinite;
+        }
+        @keyframes box-updown{
+            0%,100%{
+                transform: translate3D(5px,10px,0);
+            }
+            50%{
+                transform: translate3D(0,0,0);
+            }
+        }
+
+        .content {
+            position: relative;
+            width: 400px;
+            min-height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 20px 20px 0 rgb(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        form {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            padding: 40px;
+        }
+
+        form .title {
+            position: relative;
+            color: #ffffff;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+        }
+
+        form .title::before {
+            position: absolute;
+            margin-top: 40px;
+            content: '';
+            width: 100px;
+            height: 3px;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        form .input {
+            margin-top: 20px;
+            width: 100%;
+            height: 40px;
+        }
+
+        form .input input {
+            border: none;
+            outline: none;
+            background-color: rgba(255, 255, 255, 0.5);
+            opacity: 0.8;
+            backdrop-filter: blur(20px);
+            width: 100%;
+            height: 100%;
+            border-radius: 35px;
+            box-shadow: 2px 5px 10px rgb(0, 0, 0, 0.3);
+            padding-left: 10px;
+        }
+
+        form .input input::placeholder {
+            color: #ffffff;
+            font-size: 15px;
+            letter-spacing: 1px;
+            padding-left: 10px;
+
+        }
+
+        form button {
+            border: none;
+            outline: none;
+            background-color: rgba(255, 255, 255, 0.941);
+            width: 100px;
+            height: 35px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-radius: 35px;
+            box-shadow: 2px 5px 10px rgb(0, 0, 0, 0.3);
+            color: black;
+            font-size: 15px;
+            letter-spacing: 1px;
+            cursor: pointer;
+
+        }
+
+        form button:hover {
+            animation: login 0.3s ease;
+            animation-fill-mode: forwards;
+
+            /* transform: scale(1.1); */
+        }
+
+        @keyframes login {
+
+
+            100% {
+                transform: scale(1.1) perspective(120px) translate3D(0, 0, 0);
+            }
+        }
+
+        form p {
+            color: rgb(255, 255, 255, 0.7);
+            margin-top: 10px;
+        }
+
+        form p a {
+            margin-left: 5px;
+            font-size: 15px;
+            color: rgb(255, 255, 255, 0.7);
+            font-weight: 600;
+        }
+
+        .square1 {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 20px 20px 0 rgb(0, 0, 0, 0.1);
+            width: 130px;
+            height: 130px;
+            z-index: 0;
+            top: 100px;
+            left: 450px;
+            animation: updown 10s  12s infinite;
+        }
+        .square2 {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 20px 20px 0 rgb(0, 0, 0, 0.1);
+            width: 130px;
+            height: 130px;
+            z-index: 0;
+            top: 350px;
+            left:900px;
+            z-index: 2;
+            animation: updown 10s 6s infinite;
+        }
+        .square3 {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 20px 20px 0 rgb(0, 0, 0, 0.1);
+            width: 130px;
+            height: 130px;
+            z-index: 0;
+            top: 550px;
+            left: 550px;
+            animation: updown 10s infinite;
+        }
+        
+        @keyframes updown{
+            0%,100%{
+                transform: translateY(0);
+            }
+            50%{
+                transform: translateY(30px);
+            }
+        }
+       
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="square1"></div>
+        <div class="square2"></div>
+        <div class="square3"></div>
+        <div class="box">
+            <div class="content">
+                <form action="">
+                    <h2 class="title">Login</h2>
+                    <div class="input">
+                        <input type="text" placeholder="Username">
+                    </div>
+                    <div class="input">
+                        <input type="password" placeholder="Password">
+                    </div>
+                    <button>Login</button>
+                    <p>Forget password<a href="#">Click here</a></p>
+                    <p>Don't have an ID<a href="#">Sign up</a></p>
+                </form>
+            </div>
+
+        </div>
+        
+        
+
+    </section>
+
+</body>
+
+</html>

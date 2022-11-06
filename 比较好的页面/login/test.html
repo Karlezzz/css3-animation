@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            width: 100%;
+            min-height: 100vh;
+            overflow: hidden;
+            
+        }
+
+        .box .color {
+            position: absolute;
+            filter: blur(190px);
+            -webkit-filter: blur(160);
+        }
+
+        .box .color:nth-child(1) {
+            width: 100%;
+            height: 45vh;
+            background-color: #f3359b;
+        }
+
+        .box .color:nth-child(2) {
+            bottom: 0;
+            right: 0;
+            width: 80%;
+            height: 55vh;
+            background-color: #00d2ff;
+        }
+
+        .box .color:nth-child(3) {
+            width: 35%;
+            height: 50vh;
+            left: 0;
+            bottom: 0;
+            background-color: rgb(240, 223, 34);
+        }
+
+        .box .zhenfx {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .box .zhenfx .square {
+            position: absolute;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 20px 20px 0 rgb(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .box .zhenfx .square:nth-child(1) {
+            width: 200px;
+            height: 200px;
+            top: 12%;
+            left: 55%;
+            z-index: 0;
+            animation: upanddown 5s infinite;
+        }
+
+        .box .zhenfx .square:nth-child(2) {
+            width: 100px;
+            height: 100px;
+            top: 20%;
+            left: 10%;
+            animation: upanddown 5s 1s infinite;
+        }
+
+        .box .zhenfx .square:nth-child(3) {
+            width: 130px;
+            height: 130px;
+            top: 66%;
+            left: 30%;
+            animation: upanddown 5s 2.5s infinite;
+        }
+        .box .zhenfx .square:nth-child(4) {
+            width: 170px;
+            height: 170px;
+            top: 70%;
+            left: 60%;
+            animation: upanddown 5s 2.5s infinite;
+        }
+        .box .zhenfx .square:nth-child(5) {
+            width: 110px;
+            height: 110px;
+            top: 40%;
+            left: 35%;
+            animation: upanddown 5s  infinite;
+        }
+
+        @keyframes upanddown {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(10px);
+            }
+        }
+
+        .box .login {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* width: 80%; */
+        }
+
+        .box .login form {
+            position: relative;
+            width: 280px;
+            height: 300px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 20px 20px 0 rgb(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+
+        }
+
+        .box .login form .title {
+            position: relative;
+            margin: 20px 0 20px 30px;
+            font-size: 20px;
+            font-weight: 600;
+            color: #ffffffbf;
+            letter-spacing: 1px;
+        }
+
+        .box .login form .title::before {
+            position: absolute;
+            content: '';
+            width: 100px;
+            height: 3px;
+            background-color: #fff;
+            bottom: -10px;
+        }
+
+        .box .login form .input {
+            margin: 10px 0 0 10px;
+            height: 100px;
+            width: 90%;
+        }
+
+        .box .login form .input input {
+            padding-left: 20px;
+            margin-top: 15px;
+            outline: none;
+            border: none;
+            width: 100%;
+            height: 35px;
+            border-radius: 35px;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 10px 5px 0 rgb(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .box .login form .input input:focus {
+            animation: input-large 0.3s;
+            animation-fill-mode: forwards;
+
+        }
+
+        @keyframes input-large {
+            100% {
+                transform: scale(1.05);
+            }
+        }
+
+        .box .login form input::placeholder {
+            padding-left: 10px;
+            color: rgba(255, 255, 255, 0.781);
+        }
+
+        .box .login form button {
+            margin: 20px 0 0 10px;
+            width: 100px;
+            height: 35px;
+            border: none;
+            border-radius: 35px;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 10px 5px 0 rgb(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.486);
+
+        }
+
+        .box .login form button:hover {
+            animation: button-large 0.3s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes button-large {
+            100% {
+                transform: scale(1.05);
+            }
+        }
+
+        .box .login form .forget {
+            margin: 20px 0 0 15px;
+        }
+
+        .box .login form .forget p {
+            color: rgba(255, 255, 255, 0.558);
+            margin-top: 5px;
+        }
+
+        .box .login form .forget p a {
+            color: #fff;
+            font-size: 15px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="zhenfx">
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+        </div>
+
+        <div class="login">
+            <form action="">
+                <div class="title">
+                    Login
+                </div>
+                <div class="input">
+                    <input type="text" placeholder="Username">
+                    <input type="password" placeholder="Password">
+                </div>
+                <button>Login</button>
+                <div class="forget">
+                    <p>Forget the password <a href="">Click here</a></p>
+                    <p>Dont't have an account <a href="">Sign up</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
